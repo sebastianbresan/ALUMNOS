@@ -4,18 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="funciones.js"></script>
-    <title>Alumnos</title>
+    <title>Ranking de alumnos</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/tabla.css">
+    <link rel="stylesheet" type="text/css" href="css/formulario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="local.js"></script>
+
 </head>
 <body>
-    <form id= "form">      
-        Nombre: <input type="text" id="nombre"></label>
-        Apellidos: <input type="text" id="apellido" size="40"></input>
-        Nacionalidad: <input type="text" id="nacionalidad" size="20"></input>
+    <form class="form2" id="formreg">
+        <input type="number" id="id" placeholder="ID"  disabled value="1"<br>
+        <input type="text" id="alumno" placeholder="Nombre" <br>
+        <input type="number" id="tiempoEstudio" placeholder="Tiempo de estudio"><br>  
+        <input type="number" id="cursos" placeholder="Cursos"><br>  
+        <input type="number" id="certificados" placeholder="Certificados"><br>  
+        <input type="number" id="rutaEstudio" placeholder="Ruta de estudio"><br> 
+        
     </form>
-        Id: <input id="id" value="1" disabled style="width: 20px;"> </input>
-        <button onclick="crear()" type="reset">Crear</button>
-        <button onclick="consultar()" type="reset">Consultar</button>
+    <button id= "btn"class= ".btn__orden" name="enviar" value="Enviar" onclick="flocal()">Agregar</button>     
+
+
+    <div id="container">
+        <table class="tabla" id= "tabla">
+            <tr class="cabeceroTitulos">
+                <th>Puesto</th>
+                <td>Nombre</th>
+                <th>Dedicación</th>
+                <th>Cursos</th>
+                <th>Certificados</th>
+                <th>Progreso</th>
+            </tr>
+        </table>
+    </div>
     
 </body>
 </html>

@@ -1,0 +1,57 @@
+.form2 {
+    display: block;
+    background-color: #03afbb;
+    max-width: 480px;
+    width: 90%;
+    margin: 60px auto;  
+    text-align: center;
+    border-radius: 12px;
+    padding-bottom: 40px;
+}
+
+.form2 > input {
+    display: inline-block;
+    padding: 8px;
+    width: 68%;
+    /* outline: none; */
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 8px;
+    border-width: 0 0 0.1em;
+    border-color: #fff;
+    border-style: solid;
+    background: transparent;
+    color: #fff;
+}
+.form2 > input::placeholder {
+    text-align: center;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.form2 > button {
+    width: 68%;
+    height: 34px;
+    font-size: 1.1em;
+    margin-top: 32px;
+    text-align: center;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.form2 > button:hover {
+    background-color: #00545a;
+    color: #fff
+}
+
+.btn__orden {
+    width: 8%;
+    height: 54px;
+    font-size: 1.1em;
+    margin-top: 32px;
+    text-align: center;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}

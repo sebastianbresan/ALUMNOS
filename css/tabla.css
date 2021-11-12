@@ -1,0 +1,49 @@
+body {
+    background: linear-gradient(45deg, #bb1881, #f88b50);
+    height: 100vh;
+}
+
+.ranking {
+    display: block;
+    margin: 0 auto;
+    padding: 29px;
+    border-spacing: 18px;
+}
+
+.cabeceroTitulos {
+    font-size: 2.5em;
+}
+
+
+td, th {
+    outline: 1px solid #000;
+    width: 180px;
+    height: 30px;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 1.1em;
+    background-color: #03afbb;
+    color: #fff;
+    text-align: center;
+    
+}
+
+#btn {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: 52px;
+    border-radius: 18px;
+    border: none;
+    background-color: #03afbb;
+    color: #fff;
+    margin-top: -12px;
+    font-size: 1em;
+    font-weight: 900;
+    
+}
+
+#btn:hover {
+    background-color: rgb(255, 251, 17);
+    color: #000;
+}
