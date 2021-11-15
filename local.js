@@ -18,7 +18,7 @@ class Alumno {
 }
 
 function flocal() {
- 
+  
   let idinput = parseInt(document.getElementById(`id`).value);
   let alumnoinput = document.getElementById(`alumno`).value;
   let tiempoEstudio = parseInt(document.getElementById(`tiempoEstudio`).value);
@@ -26,6 +26,24 @@ function flocal() {
   let certificados = parseInt(document.getElementById(`certificados`).value);
   let rutaEstudio = parseInt(document.getElementById(`rutaEstudio`).value);
 
+
+  if(alumnoinput == "") {
+    alert("Debe rellenar el nombre correctamente");
+  }
+  else if (isNaN(tiempoEstudio)){
+    alert("Debe rellenar el tiempo de estudio correctamente");
+  }
+  else if (isNaN(cursos)){
+    alert("Debe rellenar los cursos correctamente");
+  }
+  else if (isNaN(certificados)){
+    alert("Debe rellenar los certificados correctamente");
+  }
+  else if (isNaN(rutaEstudio)){
+    alert("Debe rellenar el progreso correctamente");
+  }
+
+  else{
   const alumno = new Alumno(
     idinput,
     alumnoinput,
@@ -62,44 +80,41 @@ function flocal() {
   idinput++;
   document.getElementById(`id`).value = idinput;
 }
-
-
-function vaciar(){
+}
+function vaciar() {
   var contador = 1;
-  var tabla = document.getElementById('tabla');
+  var tabla = document.getElementById("tabla");
   var filas = tabla.rows.length;
   for (var i = contador; i < filas; i++) {
-      tabla.deleteRow(contador);
+    tabla.deleteRow(contador);
   }
 }
 
-
-function ordenar(){ 
-  for (x=0;x<bbdd.length;x++) {
+function ordenar() {
+  for (x = 0; x < bbdd.length; x++) {
     document.getElementById(`tabla`).innerHTML +=
-    `<tr class="fila1">
-    <td>` + 
-    bbdd[x]._id +
-    `</td>
+      `<tr class="fila1">
     <td>` +
-    bbdd[x].alumno +
-    `</td>
+      bbdd[x]._id +
+      `</td>
     <td>` +
-    bbdd[x].tiempoEstudio +
-    `</td>
+      bbdd[x].alumno +
+      `</td>
     <td>` +
-    bbdd[x].cursos +
-    `</td>
+      bbdd[x].tiempoEstudio +
+      `</td>
     <td>` +
-    bbdd[x].certificados +
-    `</td>
+      bbdd[x].cursos +
+      `</td>
     <td>` +
-    bbdd[x].rutaEstudio +
-    `</td>
+      bbdd[x].certificados +
+      `</td>
+    <td>` +
+      bbdd[x].rutaEstudio +
+      `</td>
   </tr>`;
   }
 }
-
 
 function ordenarid() {
   vaciar();
