@@ -6,17 +6,19 @@ let estadocertificados = false;
 let estadotiempoestudio = false;
 let estadorutaestudio = false;
 
-function flocal() {
-  class Alumno {
-    constructor(_id, alumno, tiempoEstudio, cursos, certificados, rutaEstudio) {
-      this._id = _id;
-      this.alumno = alumno;
-      this.tiempoEstudio = tiempoEstudio;
-      this.cursos = cursos;
-      this.certificados = certificados;
-      this.rutaEstudio = rutaEstudio;
-    }
+class Alumno {
+  constructor(_id, alumno, tiempoEstudio, cursos, certificados, rutaEstudio) {
+    this._id = _id;
+    this.alumno = alumno;
+    this.tiempoEstudio = tiempoEstudio;
+    this.cursos = cursos;
+    this.certificados = certificados;
+    this.rutaEstudio = rutaEstudio;
   }
+}
+
+function flocal() {
+ 
   let idinput = parseInt(document.getElementById(`id`).value);
   let alumnoinput = document.getElementById(`alumno`).value;
   let tiempoEstudio = parseInt(document.getElementById(`tiempoEstudio`).value);
@@ -61,7 +63,46 @@ function flocal() {
   document.getElementById(`id`).value = idinput;
 }
 
+
+function vaciar(){
+  var contador = 1;
+  var tabla = document.getElementById('tabla');
+  var filas = tabla.rows.length;
+  for (var i = contador; i < filas; i++) {
+      tabla.deleteRow(contador);
+  }
+}
+
+
+function ordenar(){ 
+  for (x=0;x<bbdd.length;x++) {
+    document.getElementById(`tabla`).innerHTML +=
+    `<tr class="fila1">
+    <td>` + 
+    bbdd[x]._id +
+    `</td>
+    <td>` +
+    bbdd[x].alumno +
+    `</td>
+    <td>` +
+    bbdd[x].tiempoEstudio +
+    `</td>
+    <td>` +
+    bbdd[x].cursos +
+    `</td>
+    <td>` +
+    bbdd[x].certificados +
+    `</td>
+    <td>` +
+    bbdd[x].rutaEstudio +
+    `</td>
+  </tr>`;
+  }
+}
+
+
 function ordenarid() {
+  vaciar();
   if (!estadoid) {
     bbdd.sort((a, b) => {
       if (a._id < b._id) {
@@ -87,8 +128,11 @@ function ordenarid() {
     console.log(bbdd);
     estadoid = false;
   }
+  ordenar();
 }
+
 function ordenarnombre() {
+  vaciar();
   if (!estadoalumno) {
     bbdd.sort((a, b) => {
       if (a.alumno < b.alumno) {
@@ -114,8 +158,10 @@ function ordenarnombre() {
     console.log(bbdd);
     estadoalumno = false;
   }
+  ordenar();
 }
 function ordenarcursos() {
+  vaciar();
   if (!estadocursos) {
     bbdd.sort((a, b) => {
       if (a.cursos < b.cursos) {
@@ -141,8 +187,10 @@ function ordenarcursos() {
     console.log(bbdd);
     estadocursos = false;
   }
+  ordenar();
 }
 function ordenarcertificados() {
+  vaciar();
   if (!estadocertificados) {
     bbdd.sort((a, b) => {
       if (a.certificados < b.certificados) {
@@ -168,8 +216,11 @@ function ordenarcertificados() {
     console.log(bbdd);
     estadocertificados = false;
   }
+  ordenar();
 }
+
 function ordenartiempoestudio() {
+  vaciar();
   if (!estadotiempoestudio) {
     bbdd.sort((a, b) => {
       if (a.tiempoEstudio < b.tiempoEstudio) {
@@ -195,8 +246,11 @@ function ordenartiempoestudio() {
     console.log(bbdd);
     estadotiempoestudio = false;
   }
+  ordenar();
 }
+
 function ordenarrutaestudio() {
+  vaciar();
   if (!estadorutaestudio) {
     bbdd.sort((a, b) => {
       if (a.rutaEstudio < b.rutaEstudio) {
@@ -222,4 +276,5 @@ function ordenarrutaestudio() {
     console.log(bbdd);
     estadorutaestudio = false;
   }
+  ordenar();
 }
